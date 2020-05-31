@@ -2,14 +2,14 @@ package main
 
 import (
 	"common"
-	"time"
+	"common/sessioncontext"
 )
 
 func main() {
-	for {
-		common.Debug("test debug")
-		common.Info("test info")
+	common.Debug("test debug")
+	common.Info("test info")
 
-		time.Sleep(time.Minute)
-	}
+	sc := sessioncontext.NewSessionCtx("")
+	sc.Debug("hehe", "haha")
+	sc.Warn("nothing")
 }
